@@ -40,13 +40,25 @@ final class RequestManager {
             "email": email,
             "password": password
         ]
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = parameters.percentEncoded()
-        let dataTask = URLSession(configuration: .default).dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
             guard let data = data, error == nil else { completionHandler(.failure(.requestFailure)); return }
             completionHandler(.success(data))
-        }
-        dataTask.resume()
+        }.resume()
+    }
+    
+    func fetchText(locale: String, completionHandler: @escaping (Result<Data, RequestError>) -> Void) {
+        let urlString = "https://apiecho.cf/api/get/text/"
+        guard var urlComp = URLComponents(string: urlString) else { completionHandler(.failure(.invalidURL)); return }
+        urlComp.queryItems = [URLQueryItem(name: "locale", value: locale)]
+        urlComp.percentEncodedQuery = urlComp.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        guard let url = urlComp.url else { return }
+            var request = URLRequest(url: url)
+        request.setValue("Bearer \(User.shared.accessToken)", forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            guard let data = data, error == nil else { completionHandler(.failure(.requestFailure)); return }
+            completionHandler(.success(data))
+        }.resume()
     }
     
 }

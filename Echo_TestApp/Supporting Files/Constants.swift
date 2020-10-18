@@ -25,4 +25,6 @@ struct C {
     static let invalidEmailMessage: String = "Invalid email"
     static let oops: String = "Oops.."
     static let signUpErrorMessage: String = "Sign Up Error"
+    static let textFetchErrorMessage: String = "Fetch Error"
+    static let mainViewCellIdentifier: String = "Cell"
 }

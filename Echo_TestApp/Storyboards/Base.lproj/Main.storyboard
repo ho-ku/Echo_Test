@@ -13,19 +13,65 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Echo_TestApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainView" customModule="Echo_TestApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-zD-W0E">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnS-IH-zpB">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="537.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euN-za-r5p">
+                                        <rect key="frame" x="0.0" y="545.5" width="414" height="210.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="euN-za-r5p" firstAttribute="leading" secondItem="Z6Q-zD-W0E" secondAttribute="leading" id="72P-rh-5Dv"/>
+                                    <constraint firstItem="NnS-IH-zpB" firstAttribute="leading" secondItem="Z6Q-zD-W0E" secondAttribute="leading" id="dFW-6O-WsX">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="30"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="euN-za-r5p" secondAttribute="trailing" id="fFi-Z0-Tpw"/>
+                                    <constraint firstAttribute="trailing" secondItem="NnS-IH-zpB" secondAttribute="trailing" id="tcR-mY-oTy">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="30"/>
+                                    </constraint>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Z6Q-zD-W0E" secondAttribute="bottom" id="6RX-zJ-5uu"/>
+                            <constraint firstItem="Z6Q-zD-W0E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7rB-NG-L4e"/>
+                            <constraint firstItem="Z6Q-zD-W0E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NOc-cc-mtG"/>
+                            <constraint firstItem="NnS-IH-zpB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="beY-SX-LlK"/>
+                            <constraint firstAttribute="trailing" secondItem="Z6Q-zD-W0E" secondAttribute="trailing" id="dLE-Rg-WSO"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="tableView" destination="euN-za-r5p" id="gQc-9r-PsX"/>
+                            <outlet property="textView" destination="NnS-IH-zpB" id="aHa-MH-Qs7"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="9uh-F5-x2F">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="1m7-jq-BjT"/>
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="1m7-jq-BjT">
+                            <connections>
+                                <action selector="logOutBtnPressed:" destination="BYZ-38-t0r" id="roE-AN-yyb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="PLe-OF-F8u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="98"/>
+            <point key="canvasLocation" x="1063.768115942029" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H4a-jK-HKJ">
@@ -47,6 +93,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

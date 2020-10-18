@@ -29,4 +29,9 @@ final class User {
         UserDefaults.standard.set(self.name, forKey: C.userNameKey)
         UserDefaults.standard.set(self.accessToken, forKey: C.accessTokenKey)
     }
+    
+    func delete() {
+        UserDefaults.standard.removeObject(forKey: C.userNameKey)
+        UserDefaults.standard.removeObject(forKey: C.accessTokenKey)
+    }
 }

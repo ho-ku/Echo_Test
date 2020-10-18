@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372DC397253CA98B006D80EF /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DC396253CA98B006D80EF /* TextModel.swift */; };
+		372DC39A253CAEF6006D80EF /* OccurrenceCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DC399253CAEF6006D80EF /* OccurrenceCounter.swift */; };
+		372DC39E253CB0F2006D80EF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DC39D253CB0F2006D80EF /* MainView.swift */; };
 		37853C74253C483C001606EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37853C73253C483C001606EA /* AppDelegate.swift */; };
 		37853C76253C483C001606EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37853C75253C483C001606EA /* SceneDelegate.swift */; };
 		37853C78253C483C001606EA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37853C77253C483C001606EA /* MainVC.swift */; };
@@ -23,11 +26,15 @@
 		379920D2253C631700150A20 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379920D1253C631700150A20 /* Dictionary+Ext.swift */; };
 		379920D5253C64C300150A20 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379920D4253C64C300150A20 /* Decoder.swift */; };
 		379920D8253C64EE00150A20 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379920D7253C64EE00150A20 /* SignUpModel.swift */; };
+		379C2AA4253CB34D005F40A6 /* Occurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C2AA3253CB34D005F40A6 /* Occurrence.swift */; };
 		37F692AE253C497400637104 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F692AD253C497400637104 /* SignUpStoryboard.storyboard */; };
 		37F692B1253C4BF300637104 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F692B0253C4BF300637104 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372DC396253CA98B006D80EF /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		372DC399253CAEF6006D80EF /* OccurrenceCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurrenceCounter.swift; sourceTree = "<group>"; };
+		372DC39D253CB0F2006D80EF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		37853C70253C483C001606EA /* Echo_TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Echo_TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37853C73253C483C001606EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37853C75253C483C001606EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +53,7 @@
 		379920D1253C631700150A20 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		379920D4253C64C300150A20 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		379920D7253C64EE00150A20 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		379C2AA3253CB34D005F40A6 /* Occurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occurrence.swift; sourceTree = "<group>"; };
 		37F692AD253C497400637104 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 		37F692B0253C4BF300637104 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +116,8 @@
 			children = (
 				379920BD253C564F00150A20 /* User.swift */,
 				379920D7253C64EE00150A20 /* SignUpModel.swift */,
+				372DC396253CA98B006D80EF /* TextModel.swift */,
+				379C2AA3253CB34D005F40A6 /* Occurrence.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				379920B2253C4D1500150A20 /* SignUpView.swift */,
+				372DC39D253CB0F2006D80EF /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +166,7 @@
 				379920CB253C605E00150A20 /* AlertManager.swift */,
 				379920CE253C622400150A20 /* RequestManager.swift */,
 				379920D4253C64C300150A20 /* Decoder.swift */,
+				372DC399253CAEF6006D80EF /* OccurrenceCounter.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -250,13 +262,17 @@
 				379920D8253C64EE00150A20 /* SignUpModel.swift in Sources */,
 				379920D2253C631700150A20 /* Dictionary+Ext.swift in Sources */,
 				379920B3253C4D1500150A20 /* SignUpView.swift in Sources */,
+				372DC39A253CAEF6006D80EF /* OccurrenceCounter.swift in Sources */,
 				379920CC253C605E00150A20 /* AlertManager.swift in Sources */,
 				37853C74253C483C001606EA /* AppDelegate.swift in Sources */,
+				372DC397253CA98B006D80EF /* TextModel.swift in Sources */,
 				379920BA253C52E200150A20 /* Router.swift in Sources */,
 				379920BE253C564F00150A20 /* User.swift in Sources */,
 				37F692B1253C4BF300637104 /* SignUpViewController.swift in Sources */,
+				372DC39E253CB0F2006D80EF /* MainView.swift in Sources */,
 				379920CF253C622400150A20 /* RequestManager.swift in Sources */,
 				37853C76253C483C001606EA /* SceneDelegate.swift in Sources */,
+				379C2AA4253CB34D005F40A6 /* Occurrence.swift in Sources */,
 				379920C1253C588D00150A20 /* DataValidator.swift in Sources */,
 				379920B6253C4F0800150A20 /* Constants.swift in Sources */,
 				379920D5253C64C300150A20 /* Decoder.swift in Sources */,
